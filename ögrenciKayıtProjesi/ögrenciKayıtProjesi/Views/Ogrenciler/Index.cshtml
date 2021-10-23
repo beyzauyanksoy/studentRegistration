@@ -1,0 +1,39 @@
+﻿@using ögrenciKayıtProjesi.Models.EntityFramework
+@model List<TBLOGRENCILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÖGRENCİ ID</th>
+        <th>ÖGRENCİNİN ADI SOYADI</th>
+      
+       
+        <th>ÖGRENCİNİN CİNSİYETİ</th>
+        <th>ÖGRENCİNİN KULÜBÜ</th>
+        <th>İŞLEMLER</th>
+        
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.OGRID</td>
+    <td>@x.OGRAD @x.OGRSOYAD</td>
+
+
+    <td>@x.OGRCINSIYET</td>
+    <td>@x.TBLKULUPLER.KULUPAD</td>
+
+    <td>
+        <a href="/Ogrenciler/Sil/@x.OGRID" class="btn btn-danger">SİL</a>
+        <a href="/Ogrenciler/OgrenciGetir/@x.OGRID" class="btn btn-success">GÜNCELLE</a>
+    </td>
+</tr>
+    }
+
+</table>
+<a href="/Ogrenciler/ogrEkle" class="btn btn-info">
+    Yeni Ögrenci
+</a>

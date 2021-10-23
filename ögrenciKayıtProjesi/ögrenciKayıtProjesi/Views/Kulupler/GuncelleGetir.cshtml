@@ -1,0 +1,26 @@
+﻿@model ögrenciKayıtProjesi.Models.EntityFramework.TBLKULUPLER
+@{
+    ViewBag.Title = "GuncelleGetir";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
+{
+   
+    <div class="form-group">
+        @Html.LabelFor(m => m.KULUPAD)
+        @Html.TextBoxFor(m => m.KULUPAD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KULUPKONTENJAN)
+        @Html.TextBoxFor(m => m.KULUPKONTENJAN, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.HiddenFor(m=>m.KULUPID)
+    </div>
+    <div style="margin-top:15px">
+       <button class="btn btn-info">
+           GÜNCELLE
+       </button>
+    </div>
+}

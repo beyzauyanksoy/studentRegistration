@@ -1,0 +1,36 @@
+﻿@model ögrenciKayıtProjesi.Models.EntityFramework.TBLOGRENCILER
+@{
+    ViewBag.Title = "ogrEkle";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>OGRENCİ ADI</label>
+        <input type="text" class="form-control" name="OGRAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>OGRENCİ SOYADI</label>
+        <input type="text" class="form-control" name="OGRSOYAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>OGRENCİNİN FOTOGRAFI</label>
+        <input type="text" class="form-control" name="OGRFOTO" />
+    </div>
+    <div style="margin-top:10px">
+        <label>OGRENCİNİN CİNSİYETİ</label>
+        <input type="text" class="form-control" name="OGRCINSIYET" />
+    </div>
+    <div style="margin-top:10px"> 
+        <label>OGRENCİNİN KULUBÜ</label>
+        @Html.DropDownListFor(m=>m.TBLKULUPLER.KULUPID,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">
+            KAYDET
+        </button>
+    </div>
+    
+
+</form>
+

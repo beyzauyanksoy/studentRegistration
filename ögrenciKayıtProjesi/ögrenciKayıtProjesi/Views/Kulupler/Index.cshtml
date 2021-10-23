@@ -1,0 +1,29 @@
+﻿@using ögrenciKayıtProjesi.Models.EntityFramework
+@model List<TBLKULUPLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>KULUP ID</th>
+        <th>KULUP ADI</th>
+        <th>KULUP KONTENJAN</th>
+        <th>İŞLEMLER</th>
+    </tr>
+      @foreach (var x in Model)
+      {
+          <tr>
+              <td>@x.KULUPID</td>
+              <td>@x.KULUPAD</td>
+              <td>@x.KULUPKONTENJAN</td>
+              <td><a href="/Kulupler/Sil/@x.KULUPID" class="btn btn-danger">SİL</a>
+              <a href="/Kulupler/GuncelleGetir/@x.KULUPID" class="btn btn-success">GÜNCELLE</a>
+              </td>
+          </tr>
+      }
+</table>
+
+<a href="/Kulupler/KulupEkle" class="btn btn-success">KAYDET</a>
+
